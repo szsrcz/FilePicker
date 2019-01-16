@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
           .addFileSupport("PDF", pdfs, R.drawable.pdf_blue)
           .enableDocSupport(false)
           .enableSelectAll(true)
-          .sortDocumentsBy(SortingTypes.name)
+          .sortDocumentsBy(SortingTypes.time)
           .withOrientation(Orientation.UNSPECIFIED)
           .pickFile(this);
     }

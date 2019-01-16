@@ -11,6 +11,7 @@ public class Document extends BaseFile {
     private String mimeType;
     private String size;
     private FileType fileType;
+    private long time;
 
     public Document(int id, String title, String path) {
         super(id,title,path);
@@ -87,5 +88,13 @@ public class Document extends BaseFile {
 
     public void setFileType(FileType fileType) {
         this.fileType = fileType;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
     }
 }

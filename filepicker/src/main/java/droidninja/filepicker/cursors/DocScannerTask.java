@@ -114,6 +114,7 @@ public class DocScannerTask extends AsyncTask<Void, Void, Map<FileType, List<Doc
         if (fileType != null && !file.isDirectory() && file.exists()) {
 
           Document document = new Document(imageId, title, path);
+          document.setTime(file.lastModified());
           document.setFileType(fileType);
 
           String mimeType =

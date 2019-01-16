@@ -11,8 +11,11 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import droidninja.filepicker.FilePickerConst;
 import droidninja.filepicker.PickerManager;
@@ -59,7 +62,8 @@ public class FileListAdapter extends SelectableAdapter<FileListAdapter.FileViewH
     holder.fileNameTextView.setText(document.getTitle());
     holder.fileSizeTextView.setText(
         Formatter.formatShortFileSize(context, Long.parseLong(document.getSize())));
-
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+    holder.fileTime.setText(simpleDateFormat.format(new Date(document.getTime())));
     holder.itemView.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
         onItemClicked(document, holder);
@@ -158,6 +162,7 @@ public class FileListAdapter extends SelectableAdapter<FileListAdapter.FileViewH
     TextView fileNameTextView;
 
     TextView fileSizeTextView;
+    TextView fileTime;
 
     public FileViewHolder(View itemView) {
       super(itemView);
@@ -166,6 +171,7 @@ public class FileListAdapter extends SelectableAdapter<FileListAdapter.FileViewH
       fileNameTextView = itemView.findViewById(R.id.file_name_tv);
       fileTypeTv = itemView.findViewById(R.id.file_type_tv);
       fileSizeTextView = itemView.findViewById(R.id.file_size_tv);
+      fileTime = itemView.findViewById(R.id.file_time);
     }
   }
 }

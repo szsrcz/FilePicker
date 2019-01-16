@@ -9,7 +9,7 @@ import droidninja.filepicker.models.Document;
  */
 
 public enum SortingTypes {
-    name(new NameComparator()), none(null);
+    name(new NameComparator()), time(new TimeComparator()), none(null);
 
     final private Comparator<Document> comparator;
 

@@ -23,6 +23,8 @@ import droidninja.filepicker.FilePickerConst;
 import droidninja.filepicker.fragments.BaseFragment;
 import java.util.ArrayList;
 import java.util.List;
+
+import droidninja.filepicker.models.sort.SortingTypes;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
@@ -150,6 +152,7 @@ public class CallerFragment extends BaseFragment implements EasyPermissions.Perm
           .setMaxCount(maxCount)
           .setSelectedFiles(docPaths)
           .enableDocSupport(true)
+              .sortDocumentsBy(SortingTypes.time)
           .setActivityTheme(R.style.FilePickerTheme)
           .pickFile(this);
     }

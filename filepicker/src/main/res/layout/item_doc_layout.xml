@@ -46,8 +46,6 @@
       android:layout_toLeftOf="@+id/checkbox"
       android:layout_toRightOf="@+id/file_iv"
       android:layout_toStartOf="@+id/checkbox"
-      android:ellipsize="end"
-      android:maxLines="1"
       android:textColor="@android:color/black"
       android:textSize="@dimen/file_name_textSize"
       tools:text="PPDF_112121.pdf"
@@ -62,6 +60,16 @@
       android:layout_toEndOf="@+id/file_iv"
       android:layout_toRightOf="@+id/file_iv"
       tools:text="1.2MB"
+      />
+
+  <TextView
+      android:id="@+id/file_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/file_name_tv"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="70dp"
+      tools:text="2019-01-01 12:00:00"
       />
 
 
