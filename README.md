@@ -1,10 +1,3 @@
-# Installation
-
-* As of now, It is only available in jCenter(), So just put this in your app dependencies:
-```gradle
-    compile 'com.droidninja:filepicker:2.1.5'
-```
-
 # Note
 This Filepicker is based on the MediaStore api provided by android. It checks MediaStore database for a file entry. If your file is not showing in the picker, it means that it is not inserted into MediaStore database yet. There is method in `FilePickerUtils` class named `notifyMediaStore(Context context, String path)` through which you can notify the MediaStore database.
 Don't forget to add WRITE_EXTERNAL_STORAGE permission.
