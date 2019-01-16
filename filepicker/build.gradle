@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group = "cn.ruicz"                                          // Maven Group ID for the artifact
-version = "1.0"
+group = 'cn.ruicz.filepick'                                          // Maven Group ID for the artifact
 
 android {
     compileSdkVersion 27
@@ -11,7 +10,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
-        versionName version
+        versionName '1.0'
     }
     buildTypes {
         release {
