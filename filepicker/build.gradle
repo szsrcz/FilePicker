@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group = 'cn.ruicz.filepick'                                          // Maven Group ID for the artifact
+group = 'com.github.szsrcz'                                          // Maven Group ID for the artifact
 
 android {
     compileSdkVersion 27
