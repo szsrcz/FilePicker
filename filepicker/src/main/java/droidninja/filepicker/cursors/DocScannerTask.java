@@ -7,8 +7,6 @@ import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 
-import com.android.internal.util.Predicate;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +14,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import droidninja.filepicker.PickerManager;
 import droidninja.filepicker.cursors.loadercallbacks.FileMapResultCallback;
 import droidninja.filepicker.models.Document;
@@ -54,8 +51,9 @@ public class DocScannerTask extends AsyncTask<Void, Void, Map<FileType, List<Doc
     HashMap<FileType, List<Document>> documentMap = new HashMap<>();
 
     for (final FileType fileType : fileTypes) {
-      Predicate<Document> docContainsTypeExtension = new Predicate<Document>() {
-        public boolean apply(Document document) {
+      FilePickerUtils.Predicate<Document> docContainsTypeExtension = new FilePickerUtils.Predicate<Document>() {
+        @Override
+        public boolean test(Document document) {
           return document.isThisType(fileType.extensions);
         }
       };
